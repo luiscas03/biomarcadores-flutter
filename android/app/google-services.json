@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "549178539079",
+    "project_id": "biomarcadores-5182a",
+    "storage_bucket": "biomarcadores-5182a.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:549178539079:android:6120e7195bcae3abb3c562",
+        "android_client_info": {
+          "package_name": "com.example.biomarcadores"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyD3ChVVm9QpCSRSuGcq2hwym433XUVnCS8"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
