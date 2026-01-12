@@ -34,7 +34,7 @@ Aplicación móvil para el monitoreo de biomarcadores (glucosa, ritmo cardíaco)
 
 | Dashboard | Medición | Escaneo |
 |-----------|----------|---------|
-| ![Dashboard](docs/images/dashboard_design.png) | ![Medir](docs/images/measure_screen.png) | ![Escaneo](docs/images/scan_screen.png) |
+| ![Dashboard](https://github.com/luiscas03/biomarcadores-flutter/blob/main/docs/images/dashboard_design.png) | ![Medir](https://github.com/luiscas03/biomarcadores-flutter/blob/main/docs/images/measure_screen.png) | ![Escaneo](https://github.com/luiscas03/biomarcadores-flutter/blob/main/docs/images/scan_screen.png) |
 
 ---
-**Versión MVP 1.0**
+**Versión 1.0**
