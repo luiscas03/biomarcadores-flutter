@@ -30,6 +30,9 @@
 build/
 appdata/
 
+# Docs
+docs/images/placeholder.txt
+
 # Android
 android/configuration.xml
 android/gradlew

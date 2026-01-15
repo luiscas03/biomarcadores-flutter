@@ -49,6 +49,8 @@ class DashboardScreenState extends State<DashboardScreen> {
 
   // Measurement State
   int _lastBPM = 0;
+  int _lastGlucose = 0;
+  int _lastSpO2 = 0; // New SpO2
   String? _lastBPMDate;
 
   // Chart Data
@@ -61,7 +63,6 @@ class DashboardScreenState extends State<DashboardScreen> {
     _bootstrap();
     _requestPermissions();
     _listenStreams();
-    _listenStreams();
     _observeConnectivity();
     loadBPM();
   }
@@ -70,6 +71,8 @@ class DashboardScreenState extends State<DashboardScreen> {
     final prefs = await SharedPreferences.getInstance();
     setState(() {
       _lastBPM = prefs.getInt('last_bpm') ?? 0;
+      _lastGlucose = prefs.getInt('last_glucose') ?? 0;
+      _lastSpO2 = prefs.getInt('last_spo2') ?? 0; // Load SpO2
       _lastBPMDate = prefs.getString('last_bpm_date');
     });
   }
@@ -312,9 +315,9 @@ class DashboardScreenState extends State<DashboardScreen> {
                        ],
                      ),
                     IconButton(
-                      icon: const Icon(Icons.settings_outlined, color: Colors.black54),
+                      icon: const Icon(Icons.logout, color: Colors.black54),
+                      tooltip: 'Cerrar sesión',
                       onPressed: () {
-                         // Settings or Logout?
                         _authService.logout().then((_) => Navigator.pushReplacementNamed(context, '/login'));
                       },
                     )
@@ -366,11 +369,16 @@ class DashboardScreenState extends State<DashboardScreen> {
                       crossAxisAlignment: CrossAxisAlignment.baseline,
                       textBaseline: TextBaseline.alphabetic,
                       children: [
-                        Text(_lastBPM > 0 ? "$_lastBPM" : "--", style: GoogleFonts.poppins(fontSize: 56, fontWeight: FontWeight.bold, color: orangeAccent)),
+                        // Primary: Glucose
+                        Text(_lastGlucose > 0 ? "$_lastGlucose" : "--", style: GoogleFonts.poppins(fontSize: 56, fontWeight: FontWeight.bold, color: orangeAccent)),
                         const SizedBox(width: 8),
-                        Text("BPM", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w500, color: orangeAccent)),
+                        Text("mg/dL", style: GoogleFonts.poppins(fontSize: 20, fontWeight: FontWeight.w500, color: orangeAccent)),
                       ],
                     ),
+                    // Secondary: BPM
+                    if (_lastBPM > 0)
+                      Text("Ritmo Cardíaco: $_lastBPM BPM", style: GoogleFonts.poppins(fontSize: 16, color: Colors.black54)),
+                    
                     Text(_lastBPMDate != null ? "Última: ${_formatDate(_lastBPMDate!)}" : "Sin mediciones recientes", style: GoogleFonts.poppins(color: Colors.black45, fontSize: 12)),
                     const SizedBox(height: 20),
                     Row(
@@ -378,6 +386,7 @@ class DashboardScreenState extends State<DashboardScreen> {
                       children: [
                         // Secondary stats within Hero
                         _buildMiniStat("Pasos", "$_steps", Colors.blue[100]!),
+                        _buildMiniStat("SpO2", _lastSpO2 > 0 ? "$_lastSpO2%" : "--", Colors.green[100]!),
                         _buildMiniStat("Actividad", activity, Colors.orange[100]!),
                       ],
                     )

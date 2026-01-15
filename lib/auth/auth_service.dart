@@ -4,7 +4,7 @@ import 'package:dio/dio.dart';
 import 'package:jwt_decoder/jwt_decoder.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:biomarcadores/api/config.dart';
-import 'package:biomarcadores/api/manychat_api.dart';
+import '../api/manychat_api.dart';
 class AuthService {
   AuthService() : _dio = Dio(BaseOptions(baseUrl: ApiConfig.baseUrl));
 
@@ -24,8 +24,10 @@ class AuthService {
 
   Future<String?> getValidAccessToken({
     Duration tolerance = const Duration(minutes: 1),
-  }) async {
+  }) async {;
     var token = await getAccessToken();
+    print("El token es: ");
+    print(token);
     if (token == null) {
       final refreshed = await refreshToken();
       if (!refreshed) return null;

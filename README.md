@@ -34,9 +34,9 @@ Aplicación móvil para el monitoreo de biomarcadores (glucosa, ritmo cardíaco)
 
 | Dashboard | Medición | Escaneo |
 |-----------|----------|---------|
-| Dashboard | Medición | Escaneo |
-|-----------|----------|---------|
 | ![Dashboard](docs/images/dashboard_design.jpeg) | ![Medir](docs/images/measure_screen.jpeg) | ![Escaneo](docs/images/scan_screen.jpeg) |
+| Resultado | Histórico |  |
+| ![Resultado](docs/images/Resultado.jpeg) | ![Histórico](docs/images/Historico.jpeg) |  |
 
 ---
 **Versión 1.0**

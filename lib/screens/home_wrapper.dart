@@ -1,5 +1,6 @@
 import 'package:biomarcadores/screens/dashboard_screen.dart';
 import 'package:biomarcadores/screens/measure_screen.dart';
+import 'package:biomarcadores/screens/history_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -23,7 +24,7 @@ class _HomeWrapperState extends State<HomeWrapper> {
     _pages = [
       DashboardScreen(key: _dashboardKey),
       const MeasureScreen(),
-      const Scaffold(body: Center(child: Text("Historial"))),
+      const HistoryScreen(),
     ];
   }
 
