@@ -1,0 +1,8 @@
+{
+  "url": "http://127.0.0.1:8000/openapi.json",
+  "method": "GET",
+  "headers": {
+    "X-API-Key": "<REDACTED>"
+  },
+  "body": null
+}

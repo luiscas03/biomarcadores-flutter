@@ -1,0 +1,8 @@
+{
+  "url": "http://127.0.0.1:8000/health",
+  "method": "GET",
+  "headers": {
+    "X-API-Key": "<REDACTED>"
+  },
+  "body": null
+}

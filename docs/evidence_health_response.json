@@ -1,0 +1,50 @@
+{
+  "status": 200,
+  "body": {
+    "status": "ok",
+    "features_esperadas": 38,
+    "tiene_named_steps": true,
+    "num_cols": [
+      "Edad_Años",
+      "ips_codigo",
+      "edad",
+      "talla",
+      "peso",
+      "imc",
+      "tas",
+      "tad",
+      "perimetro_abdominal",
+      "puntaje_total",
+      "Consumo_Cigarrillo",
+      "riesgo_dm"
+    ],
+    "cat_cols": [
+      "Grupo_Analito",
+      "Regimen",
+      "tipo_identificacion",
+      "sexo",
+      "genero",
+      "Etniats",
+      "Poblacion_Victima",
+      "Condicion_Discapacidad",
+      "Zona_Residencia",
+      "direccion",
+      "telefono",
+      "Municipio",
+      "ocupacion",
+      "regimen",
+      "EPS",
+      "imc_interpretacion",
+      "Obesidad_Grado",
+      "realiza_ejercicio",
+      "frecuencia_frutas",
+      "medicamentos_hta",
+      "Niveles_Altos_Glucosa",
+      "Dx_Diabetes_Tipo2_Familia",
+      "Dm",
+      "tipo_dm",
+      "Dx Enfermedad Cardiovascular",
+      "interpretacion"
+    ]
+  }
+}

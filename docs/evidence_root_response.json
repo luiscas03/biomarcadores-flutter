@@ -1,0 +1,9 @@
+{
+  "status": 200,
+  "body": {
+    "ok": true,
+    "service": "API Glucosa RF",
+    "docs": "/docs",
+    "health": "/health"
+  }
+}

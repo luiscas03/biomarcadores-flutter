@@ -335,10 +335,12 @@ class _HeartRatePageState extends State<HeartRatePage> {
         debugPrint('PPG status: ${e.response?.statusCode}');
         debugPrint('PPG body: ${e.response?.data}');
       }
+      const friendly = 'No se pudo procesar la senal en el servidor. '
+          'Se usara una estimacion local.';
       if (mounted) {
-        setState(() => _resultError = e.toString());
+        setState(() => _resultError = friendly);
       } else {
-        _resultError = e.toString();
+        _resultError = friendly;
       }
     }
 
@@ -365,7 +367,7 @@ class _HeartRatePageState extends State<HeartRatePage> {
       _bpm = fallbackBpm;
     }
 
-    _glucose = _calculateGlucose(_bpm, _spo2);
+    _glucose = _calculateGlucose(_bpm, _spo2, confidence: _confidence);
 
     if (mounted) {
       setState(() {
@@ -448,13 +450,14 @@ class _HeartRatePageState extends State<HeartRatePage> {
     return bpmVal.round();
   }
 
-  int _calculateGlucose(int bpm, int spo2) {
+  int _calculateGlucose(int bpm, int spo2, {double? confidence}) {
     if (bpm <= 0) return 0;
-    final variance = (DateTime.now().millisecond % 15);
-    final base = 90.0;
-    final bpmFactor = (bpm - 70) * 0.5;
-    final spo2Factor = (100 - (spo2 > 0 ? spo2 : 98)) * 1.5;
-    return (base + bpmFactor + spo2Factor + variance).round().clamp(70, 180);
+    if (confidence != null && confidence < 0.4) return 0;
+    final base = 100.0;
+    final bpmFactor = (bpm - 70) * 0.7;
+    final spo2Base = spo2 > 0 ? spo2 : 98;
+    final spo2Factor = (95 - spo2Base) * 2.0;
+    return (base + bpmFactor + spo2Factor).round().clamp(70, 180);
   }
 
   Future<void> _saveAndExit({
@@ -654,7 +657,7 @@ class _HeartRatePageState extends State<HeartRatePage> {
                               ),
                             if (_resultError != null)
                               Text(
-                                "Error backend: $_resultError",
+                                _resultError!,
                                 style: GoogleFonts.poppins(color: Colors.redAccent, fontSize: 11),
                                 textAlign: TextAlign.center,
                               ),

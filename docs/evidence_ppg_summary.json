@@ -1,0 +1,12 @@
+{
+  "bpm": 45,
+  "confidence": 0,
+  "quality": {
+    "snr_db": -9.41,
+    "motion_pct": 12.02,
+    "valid": false
+  },
+  "fps": 30,
+  "method": "CHROM",
+  "n_samples": 600
+}

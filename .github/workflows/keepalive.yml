@@ -1,0 +1,17 @@
+name: keepalive
+
+on:
+  schedule:
+    - cron: "*/15 * * * *"
+  workflow_dispatch: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping FastAPI health
+        run: |
+          curl -fsS "https://glucosa-fastapi.onrender.com/health" > /dev/null
+      - name: Ping Django health
+        run: |
+          curl -fsS "https://biomarcadores.vercel.app/health" > /dev/null

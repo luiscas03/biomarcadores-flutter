@@ -52,3 +52,6 @@ ios/Runner/GeneratedPluginRegistrant.*
 
 # Exceptions to above rules.
 !/packages/flutter_tools/test/data/dart_dependencies_test/**/.packages
+# Audit pack: keep only E5
+audit_pack/*
+!audit_pack/E5_Dia5.md

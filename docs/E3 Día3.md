@@ -15,13 +15,15 @@ Objetivo del dia: App usable (medir -> ver resultado -> ver historico + graficas
 
 ## Repositorios / Entornos
 - App (Flutter): C:\Users\Flutter\biomarcad
-- Backend (Django / Vercel): C:\Users\Python\biomarcadores\app | https://biomarcadores.vercel.app
-- FastAPI (Render): C:\Users\Modelo_Predicccion | https://glucosa-fastapi.onrender.com
+- Backend (Django / Vercel): C:\Users\Davide\Documents\Proyectos Python\biomarcadores\app | https://biomarcadores.vercel.app
+- FastAPI (Render): C:\Users\Davide\Documents\Glucosa | https://glucosa-fastapi.onrender.com
 - Staging / URLs:
   - Django /health: https://biomarcadores.vercel.app/health
   - Django /docs: https://biomarcadores.vercel.app/docs
   - FastAPI /docs: https://glucosa-fastapi.onrender.com/docs
   - FastAPI /api/v1/ppg/measure: https://glucosa-fastapi.onrender.com/api/v1/ppg/measure
+  - Repositorio app https://github.com/luiscas03/biomarcadores-flutter.git
+  - Repositorio FastApi https://github.com/luiscas03/glucosa-fastapi.git
 
 ## Checklist (DoD del dia)
 - [x] Medicion con preview en tiempo real, timer, indicadores de luz/estabilidad y boton "capturar" condicionado.
