@@ -1,5 +1,5 @@
 # Biomarcadores - Monitoreo No-Invasivo
-
+## Biomarcadores | 111598
 Aplicación móvil para el monitoreo de biomarcadores (glucosa, ritmo cardíaco) utilizando tecnologías de visión computacional y sensores del dispositivo.
 
 ## Características Principales
@@ -12,7 +12,7 @@ Aplicación móvil para el monitoreo de biomarcadores (glucosa, ritmo cardíaco)
 ## Stack Tecnológico
 
 *   **Frontend**: Flutter (Dart)
-*   **Backend**: Django REST Framework (Deploy en Vercel)
+*   **Backend**: Django REST Framework (Deploy en Vercel)``
 *   **Base de Datos Local**: SQLite (sqflite)
 *   **Gráficos**: fl_chart
 
